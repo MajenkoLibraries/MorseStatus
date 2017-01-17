@@ -9,14 +9,14 @@
 
 class MorseStatus {
     private:
-        uint8_t _led;
-        const __FlashStringHelper *_status;
-        uint32_t _ts;
-        bool _ledstate;
+        volatile uint8_t _led;
+        volatile const __FlashStringHelper *_status;
+        volatile uint32_t _ts;
+        volatile bool _ledstate;
         bool _actlow;
-        bool _on;
-        bool _off;
-        int8_t _digit;
+        volatile bool _on;
+        volatile bool _off;
+        volatile int8_t _digit;
         
     public:
         MorseStatus(uint8_t led) : _led(led), _actlow(false) {}
